@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b14" />
+  <title>Emotion AI • BiGRU Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="grid"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div>
+          <div class="brand-name">EMOTION<span>AI</span></div>
+          <div class="brand-sub">BiGRU Neural Intelligence</div>
+        </div>
+      </div>
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot"></span>
+        <span id="statusText">Checking system</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> REAL-TIME TEXT EMOTION ANALYSIS</div>
+      <h1>Give your words<br><span>an emotional signal.</span></h1>
+      <p>Enter a sentence and let the BiGRU model decode the dominant emotion with a live confidence profile.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="panel-kicker">01 / INPUT</span>
+            <h2>What are you feeling?</h2>
+          </div>
+          <button class="ghost-btn" id="clearBtn" type="button">Clear</button>
+        </div>
+
+        <div class="textarea-wrap">
+          <textarea id="textInput" maxlength="2000" placeholder="Type something like: I finally achieved my dream and I feel amazing..." autofocus></textarea>
+          <div class="textarea-bottom">
+            <span id="charCount">0 / 2000</span>
+            <span class="hint">Enter ↵ to analyze</span>
+          </div>
+        </div>
+
+        <div class="examples">
+          <span>Try:</span>
+          <button type="button" class="example-chip">I am so happy today!</button>
+          <button type="button" class="example-chip">I am scared about what happens next.</button>
+          <button type="button" class="example-chip">Why would they do that to me?</button>
+        </div>
+
+        <button class="analyze-btn" id="analyzeBtn" type="button">
+          <span class="btn-icon">✦</span>
+          <span id="btnText">Analyze Emotion</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+
+      <div class="panel result-panel" id="resultPanel">
+        <div class="panel-heading">
+          <div>
+            <span class="panel-kicker">02 / OUTPUT</span>
+            <h2>Neural readout</h2>
+          </div>
+          <div class="scan-badge" id="scanBadge">STANDBY</div>
+        </div>
+
+        <div class="result-core" id="resultCore">
+          <div class="orb-wrap">
+            <div class="orb-ring ring-1"></div>
+            <div class="orb-ring ring-2"></div>
+            <div class="orb">
+              <span id="emotionEmoji">◌</span>
+            </div>
+          </div>
+          <div class="emotion-label" id="emotionLabel">Waiting for input</div>
+          <div class="confidence-line">
+            <span>Confidence</span>
+            <strong id="confidenceValue">—</strong>
+          </div>
+          <div class="confidence-track">
+            <div class="confidence-fill" id="confidenceFill"></div>
+          </div>
+        </div>
+
+        <div class="probability-title">
+          <span>Emotion probability</span>
+          <span>MODEL OUTPUT</span>
+        </div>
+        <div class="probabilities" id="probabilities">
+          <div class="empty-state">Your six-class probability profile will appear here.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insight-strip">
+      <div class="insight">
+        <span class="insight-icon">◈</span>
+        <div><small>MODEL</small><strong>BiGRU</strong></div>
+      </div>
+      <div class="insight">
+        <span class="insight-icon">⌁</span>
+        <div><small>SEQUENCE</small><strong>50 tokens</strong></div>
+      </div>
+      <div class="insight">
+        <span class="insight-icon">◉</span>
+        <div><small>CLASSES</small><strong>6 emotions</strong></div>
+      </div>
+      <div class="insight">
+        <span class="insight-icon">⚡</span>
+        <div><small>MODE</small><strong>Live API</strong></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>EMOTION AI</span>
+      <span>•</span>
+      <span>Text → Tokenize → Pad → BiGRU → Emotion</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
