@@ -1,6 +1,6 @@
-fastapi==0.116.1
-uvicorn[standard]==0.35.0
-tensorflow==2.20.0
-keras==3.11.3
-numpy==2.2.6
-pydantic==2.11.7
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+tensorflow-cpu==2.17.0
+numpy==1.26.4
+h5py==3.11.0
